@@ -53,7 +53,7 @@ function Info() {
 
   const refreshToken = async () => {
     try {
-      const response = await axios.get(process.env.API+'token')
+      const response = await axios.get(`${process.env.API}/token`)
       const decoded = jwt_decode(response.data.accessToken)
       setExpire(decoded.exp)
     } catch (error) {
@@ -68,7 +68,7 @@ function Info() {
   axiosJWT.interceptors.request.use(async (config) => {
     const currentDate = new Date();
     if (expire * 1000 < currentDate.getTime()) {
-      const response = await axios.get(process.env.API+'token')
+      const response = await axios.get(`${process.env.API}/token`)
       config.headers.Authorization = `Bearer ${response.data.accessToken}`
       setToken(response.data.accessToken)
     }
@@ -78,7 +78,7 @@ function Info() {
   })
 
   const getUsers = async () => {
-    const response = await axiosJWT.get(process.env.API+'users', {
+    const response = await axiosJWT.get(`${process.env.API}/users`, {
       headers: {
         Authorization: `Bearer ${token}`
       }

@@ -56,7 +56,7 @@ function TransferAntarBank() {
 
   const refreshToken = async () => {
     try {
-      const response = await axios.get(process.env.API+'token')
+      const response = await axios.get(`${process.env.API}/token`)
       const decoded = jwt_decode(response.data.accessToken)
       setExpire(decoded.exp)
     } catch (error) {
@@ -71,7 +71,7 @@ function TransferAntarBank() {
   axiosJWT.interceptors.request.use(async (config) => {
     const currentDate = new Date();
     if (expire * 1000 < currentDate.getTime()) {
-      const response = await axios.get(process.env.API+'token')
+      const response = await axios.get(`${process.env.API}/token`)
       config.headers.Authorization = `Bearer ${response.data.accessToken}`
       setToken(response.data.accessToken)
     }
@@ -81,7 +81,7 @@ function TransferAntarBank() {
   })
 
   const getUsers = async () => {
-    const response = await axiosJWT.get(process.env.API+'users', {
+    const response = await axiosJWT.get(`${process.env.API}/users`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -106,7 +106,7 @@ function TransferAntarBank() {
   }, 500);
 
   const getListBankTerdaftar = async () => {
-    const response = await axiosJWT.post(process.env.API+'listBankTerdaftar', {
+    const response = await axiosJWT.post(`${process.env.API}/listBankTerdaftar`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -276,7 +276,7 @@ function TransferAntarBank() {
   let objRek = [];
   const getInfoNorek = async () => {
     for (let i in objRek) {
-      const response = await axios.post(process.env.API+'infonorek', {
+      const response = await axios.post(`${process.env.API}/infonorek`, {
         norek: objRek[i].no_rek
       })
       sampleListNorek.push(response.data)
@@ -286,7 +286,7 @@ function TransferAntarBank() {
   }
 
   const getListnorekTerdaftar = async () => {
-    const response = await axiosJWT.post(process.env.API+'listRekening', {
+    const response = await axiosJWT.post(`${process.env.API}/listRekening`, {
       userId: user.userId,
       bank: bank
     })
@@ -348,7 +348,7 @@ function TransferAntarBank() {
 
   const kirimTransfer = async () => {
     try {
-      const response = await axiosJWT.post(process.env.API+'transfer', {
+      const response = await axiosJWT.post(`${process.env.API}/transfer`, {
         headers: {
           Authorization: `Bearer ${token}`
         },

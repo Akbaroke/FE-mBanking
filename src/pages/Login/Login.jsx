@@ -71,7 +71,7 @@ const Login = () => {
       return false
     }
     try {
-      await axios.post(process.env.API+'login', {
+      await axios.post(`${process.env.API}/login`, {
         kode_akses: codeAkses,
         ip_address: ip
       })
