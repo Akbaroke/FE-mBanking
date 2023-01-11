@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Btn from '../../components/Btn'
 import axios from 'axios';
 import BtnBig from '../../components/BtnBig'
-import Logout from '../Logout'
+// import Logout from '../Logout'
 import { DeviceUUID } from 'device-uuid'
 import bgBottom from '../../assets/Svg/bg-bottom.svg'
 import mBac from '../../assets/Svg/m-bac.svg'
@@ -71,7 +71,7 @@ const Login = () => {
       return false
     }
     try {
-      await axios.post(`${process.env.API}/login`, {
+      await axios.post(`${process.env.API}../login`, {
         kode_akses: codeAkses,
         ip_address: ip
       })
