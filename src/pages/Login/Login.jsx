@@ -55,7 +55,7 @@ const Login = () => {
   useEffect(() => {
     getDataIp()
     Logout()
-  })
+  },[])
 
   useEffect(() => {
     if (isImageLoad) {
