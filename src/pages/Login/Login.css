@@ -1,0 +1,218 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+}
+
+html,body{
+  overflow: hidden;
+}
+
+.container{
+  position: relative;
+  max-width: 360px;
+  max-height: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.bg{
+  position: relative;
+  background: radial-gradient(118.44% 61.93% at 50% 38.07%, #FFFFFF 0%, #387FBF 8.85%, #194981 42.19%, #032356 66.67%);
+  width: 100%;
+  min-height: 100vh;
+}
+
+#logo-bacWhite{
+  display: block;
+  width: 220px;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+.bg-bottom{
+  position: absolute;
+  width: 100%;
+  height: 487px;
+  left: -1px;
+  bottom: -100px;
+}
+
+.bg-bottom > img{
+  width: 100%;
+  height: 100%;
+}
+
+.btn-login{
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 85vh;
+  padding-top: 70px;
+}
+.footer{
+  position: absolute;
+  z-index: 1;
+  background: linear-gradient(180deg, #FFFFFF 0%, #9EACC0 45.65%, #7085A2 76.89%);
+  width: 100%;
+  height: 58.88px;
+  bottom: 0;
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: 'Arial';
+}
+.footer > span{
+  font-style: italic;
+}
+
+.btn-about{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+@media only screen and (min-height: 830px){
+  .bg{
+    min-height: 741px;
+  }
+  .btn-login{
+    padding-top: 100px;
+  }
+  .bg-bottom{
+    bottom: 0;
+  }
+  #logo-abcWhite{
+    margin-bottom: 50px;
+  }
+}
+
+
+.card{
+  max-width: 289px;
+  max-height: 209px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 10%;
+}
+
+.button{
+  width: 281px;
+  height: 65px;
+  background: linear-gradient(180deg, rgba(22,152,232,1) 0%, rgba(10,98,176,1) 32%, rgba(1,54,130,1) 90%);
+  cursor: pointer;
+  transition: .3s;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+  padding: 5px 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  color: #fff;
+}
+
+.button:hover{
+  transform: scale(1.01);
+  box-shadow: 2px 2px 4px #00000045;
+  transition: .3s;
+}
+
+.button:nth-child(1){
+  border-radius: 8px 8px 0 0;
+}
+.button:nth-child(3){
+  border-radius: 0 0 8px 8px;
+}
+
+.op{
+  max-width: 277px;
+  height: 145px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.button-op{
+  display: block;
+  width: 100%;
+  height: 42px;
+  border-radius: 5px;
+  background: linear-gradient(180deg, rgba(22,152,232,1) 0%, rgba(10,98,176,1) 32%, rgba(1,54,130,1) 90%);
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 9px;
+  cursor: pointer;
+}
+
+.popup-error,
+.popup{
+  position: absolute;
+  z-index: 999;
+  width: 360px;
+  height: 800px;
+  background-color: #00000080;
+}
+
+.popup-error .card-popup > p{
+  display: block;
+  height: 180px;
+  text-align: left;
+  font-size: 13px;
+}
+
+.card-popup{
+  width: 250px;
+  min-height: 120px;
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(236,236,236,1) 86%, rgba(237,237,237,1) 100%);
+  align-items: center;
+  padding: 15px;
+  border-radius: 2px;
+  position: relative;
+  top: 18vh;
+  margin: auto;
+}
+
+.popup-error > .card-popup{
+  height: max-content;
+}
+
+.card-popup > p {
+  color: #085192;
+  font-weight: 400;
+  font-size: 13px;
+  text-align: center;
+}
+
+#kodeAkses{
+  width: 100%;
+  height: 30px;
+  padding: 10px;
+  margin: 10px 0 0 0;
+  outline: none;
+  border: 1px solid #B4B4B4;
+  border-radius: 2px;
+}
+#kodeAkses::placeholder{
+  opacity: 0.7;
+}
+
+.action{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}

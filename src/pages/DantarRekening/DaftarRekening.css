@@ -1,0 +1,182 @@
+.validasiRekening,
+.daftarRekening{
+  background-color: #bebebe;
+  width: 100%;
+  min-height: 90vh;
+  color: #fff;
+  padding: 40px 30px;
+}
+
+@media only screen and (min-height: 830px){
+  .validasiRekening,
+  .daftarRekening{
+    min-height: 682px;
+  }
+}
+
+
+.topbar-send{
+  width: 100%;
+  height: 58px;
+  background-color: #F8F8F8;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-bottom: 1px solid #ADADAD;
+}
+
+.topbar-send > p {
+  font-size: 15px;
+  color: #015A9E;
+  font-weight: 500;
+}
+
+.topbar-send > div {
+  position: absolute;
+  right: 20px;
+  bottom: 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+
+.topbar-send .pending,
+.topbar-send .offline,
+.topbar-send .online {
+  width: 13px;
+  height: 13px;
+  border-radius: 2px;
+  border: 0.3px solid #B0B0B0;
+  box-shadow: inset 1px 1px 1px #00000045;
+  background-color: #0A62B0;
+}
+
+.topbar-send .pending{
+  background-color: #0A62B0;
+}
+.topbar-send .offline{
+  background-color: #FD010E;
+}
+.topbar-send .online{
+  background-color: #93D72C;
+}
+.topbar-send .send{
+  cursor: pointer;
+  background: linear-gradient(160deg, rgba(127,152,184,1) 0%, rgba(62,94,139,1) 100%);
+  width: 51px;
+  height: 33px;
+  border-radius: 5px;
+  color: #F8F8F8;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 9px;
+  box-shadow: 2px 2px 4px #00000045;
+}
+
+.topbar-send .send:active{
+  box-shadow: 1px 1px 2px #00000045;
+}
+
+.daftarRekening > p{
+  color: #015A9E;
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.card-daftarRekening{
+  max-width: 309px;
+  height: max-content;
+  background-color: #F8F8F8;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #ADADAD;
+  margin-top: 5px;
+}
+
+.card-daftarRekening > div{
+  width: 100%;
+  height: 40px;
+  padding: 0 15px;
+}
+.card-daftarRekening > div:nth-child(2){
+  border-top: 1px solid #ADADAD;
+  border-bottom: 1px solid #ADADAD;
+}
+
+.card-daftarRekening > div > input{
+  width: 95%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  color: #ADADAD;
+}
+.card-daftarRekening > div > input:focus{
+  color: #015A9E;
+}
+
+.card-daftarRekening > div > input::placeholder{
+  opacity: 0.7;
+  font-weight: 400;
+}
+
+.box-validasiRekening{
+  max-width: 309px;
+  height: max-content;
+}
+
+.card-listRekening{
+  display: flex;
+  justify-content: space-between;
+  background-color: #F8F8F8;
+  padding: 8px 10px;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  border: 2px solid #ADADAD;
+  color: #9A9A9A;
+  margin-bottom: 5px;
+}
+
+.card-listRekening > div {
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.card-listRekening > div > p:nth-child(1){
+  font-size: 14px;
+  font-weight: 600;
+  color: #065CAA;
+}
+
+.submitRekening{
+  position: relative;
+}
+
+.submitRekening::before{
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 2px solid #015A9E;
+  box-sizing: border-box;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: .3s all ease;
+}
+
+.submitRekening:checked::before{
+  background-image: url("../../assets/Svg/cekbox.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  border: none;
+  visibility: visible;
+}
