@@ -1,7 +1,18 @@
 import dotenv from 'dotenv';
 dotenv.config();
 module.exports = {
-  env: {
-    API: process.env.API,
+  resolve: {
+    fallback: {
+      fs: false,
+      tls: false,
+      net: false,
+      path: false,
+      zlib: false,
+      http: false,
+      https: false,
+      stream: false,
+      crypto: false,
+      'crypto-browserify': require.resolve('crypto-browserify'),
+    },
   },
-}
+};
