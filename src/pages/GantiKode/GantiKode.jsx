@@ -121,7 +121,7 @@ function GantiKode() {
 
   const getUserNameByEmail = async () => {
     try {
-      const response = await axios.post(`${process.env.API}/getInfoUsernameByEmail`, {
+      const response = await axios.post(`${process.env.API}getInfoUsernameByEmail`, {
         email: email
       })
       sendReqOtp(response.data.nama)
@@ -135,7 +135,7 @@ function GantiKode() {
   const sendReqOtp = async (nama) => {
     try {
       // send otp
-      await axios.post(`${process.env.API}/otp`, {
+      await axios.post(`${process.env.API}otp`, {
         nama: nama,
         emailTo: email,
         ip_address: ip
@@ -149,7 +149,7 @@ function GantiKode() {
   }
 
   const cekLimitResendCode = async () => {
-    const response = await axios.post(`${process.env.API}/otp/ceklimit`, {
+    const response = await axios.post(`${process.env.API}otp/ceklimit`, {
       ip_address: ip
     })
     setLimitResendCode(response.data.time);
@@ -157,7 +157,7 @@ function GantiKode() {
 
   const OtpAuth = async () => {
     try {
-      await axios.post(`${process.env.API}/otp/auth`, {
+      await axios.post(`${process.env.API}otp/auth`, {
         emailTo: email,
         otpKode: otp,
         ip_address: ip
@@ -176,7 +176,7 @@ function GantiKode() {
 
   const requestGantiKode = async () => {
     try {
-      await axios.post(`${process.env.API}/gantikode`, {
+      await axios.post(`${process.env.API}gantikode`, {
         kodeLama: kodeAksesLama,
         kodeBaru: kodeAksesBaru,
         konfirmKodeBaru: kodeAksesBaru,

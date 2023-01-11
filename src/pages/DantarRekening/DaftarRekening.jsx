@@ -62,7 +62,7 @@ function DaftarRekening() {
 
   const refreshToken = async () => {
     try {
-      const response = await axios.get(`${process.env.API}/token`)
+      const response = await axios.get(`${process.env.API}token`)
       const decoded = jwt_decode(response.data.accessToken)
       setExpire(decoded.exp)
     } catch (error) {
@@ -77,7 +77,7 @@ function DaftarRekening() {
   axiosJWT.interceptors.request.use(async (config) => {
     const currentDate = new Date();
     if (expire * 1000 < currentDate.getTime()) {
-      const response = await axios.get(`${process.env.API}/token`)
+      const response = await axios.get(`${process.env.API}token`)
       config.headers.Authorization = `Bearer ${response.data.accessToken}`
       setToken(response.data.accessToken)
     }
@@ -87,7 +87,7 @@ function DaftarRekening() {
   })
 
   const getUsers = async () => {
-    const response = await axiosJWT.get(`${process.env.API}/users`, {
+    const response = await axiosJWT.get(`${process.env.API}users`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -170,7 +170,7 @@ function DaftarRekening() {
   const cekDataRekening = async (obj) => {
     for (const dataNorek in obj) {
       try {
-        const response = await axios.post(`${process.env.API}/ceknomor`, {
+        const response = await axios.post(`${process.env.API}ceknomor`, {
           userId: user.userId,
           no_rek: dataNorek
         })
@@ -311,7 +311,7 @@ function DaftarRekening() {
     try {
       for (const noRek in reqNorek) {
         if (reqNorek[noRek] != null) {
-          await axiosJWT.post(`${process.env.API}/daftar_antarrekening`, {
+          await axiosJWT.post(`${process.env.API}daftar_antarrekening`, {
             headers: {
               Authorization: `Bearer ${token}`
             },

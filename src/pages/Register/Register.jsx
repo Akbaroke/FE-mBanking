@@ -94,7 +94,7 @@ function Register() {
 
   const register = async () => {
     try {
-      await axios.post(`${process.env.API}/users`, {
+      await axios.post(`${process.env.API}users`, {
         nama: nama,
         email: email,
         pin: pin,
@@ -144,7 +144,7 @@ function Register() {
 
   const cekEmailAllReady = async () => {
     try {
-      await axios.post(`${process.env.API}/cekemail`, {
+      await axios.post(`${process.env.API}cekemail`, {
         email: email
       })
       setPage(true)
@@ -159,7 +159,7 @@ function Register() {
 
   const sendReqOtp = async () => {
     try {
-      await axios.post(`${process.env.API}/otp`, {
+      await axios.post(`${process.env.API}otp`, {
         nama: nama,
         emailTo: email,
         ip_address: ip
@@ -172,7 +172,7 @@ function Register() {
   }
 
   const cekLimitResendCode = async () => {
-    const response = await axios.post(`${process.env.API}/otp/ceklimit`, {
+    const response = await axios.post(`${process.env.API}otp/ceklimit`, {
       ip_address: ip
     })
     setLimitResendCode(response.data.time);
@@ -180,7 +180,7 @@ function Register() {
 
   const OtpAuth = async () => {
     try {
-      await axios.post(`${process.env.API}/otp/auth`, {
+      await axios.post(`${process.env.API}otp/auth`, {
         emailTo: email,
         otpKode: otp,
         ip_address: ip

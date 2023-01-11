@@ -51,7 +51,7 @@ function DaftarAntarBank() {
 
   const refreshToken = async () => {
     try {
-      const response = await axios.get(`${process.env.API}/token`)
+      const response = await axios.get(`${process.env.API}token`)
       const decoded = jwt_decode(response.data.accessToken)
       setExpire(decoded.exp)
     } catch (error) {
@@ -66,7 +66,7 @@ function DaftarAntarBank() {
   axiosJWT.interceptors.request.use(async (config) => {
     const currentDate = new Date();
     if (expire * 1000 < currentDate.getTime()) {
-      const response = await axios.get(`${process.env.API}/token`)
+      const response = await axios.get(`${process.env.API}token`)
       config.headers.Authorization = `Bearer ${response.data.accessToken}`
       setToken(response.data.accessToken)
     }
@@ -76,7 +76,7 @@ function DaftarAntarBank() {
   })
 
   const getUsers = async () => {
-    const response = await axiosJWT.get(`${process.env.API}/users`, {
+    const response = await axiosJWT.get(`${process.env.API}users`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -88,7 +88,7 @@ function DaftarAntarBank() {
 
 
   const getListBank = async () => {
-    const response = await axios.get(`${process.env.API}/listbank`)
+    const response = await axios.get(`${process.env.API}listbank`)
     setListBank(response.data)
   }
 
@@ -108,7 +108,7 @@ function DaftarAntarBank() {
       return false
     }
     try {
-      await axiosJWT.post(`${process.env.API}/daftar_antarbank`, {
+      await axiosJWT.post(`${process.env.API}daftar_antarbank`, {
         headers: {
           Authorization: `Bearer ${token}`
         },
@@ -145,7 +145,7 @@ function DaftarAntarBank() {
     }
 
     try {
-      const response = await axios.post(`${process.env.API}/ceknomorlain`, {
+      const response = await axios.post(`${process.env.API}ceknomorlain`, {
         userId: userId,
         no_rek: noRek,
         bank: bank

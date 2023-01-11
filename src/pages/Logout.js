@@ -2,7 +2,7 @@ import axios from 'axios';
 
 async function Logout() {
   try {
-    await axios.delete(`${process.env.API}/logout`)
+    await axios.delete(`${process.env.API}logout`)
   } catch (error) {
     console.log(error);
   }
