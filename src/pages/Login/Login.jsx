@@ -54,8 +54,9 @@ const Login = () => {
 
   useEffect(() => {
     getDataIp()
+    console.log(process.env.API);
     // Logout()
-  })
+  }, [])
 
   useEffect(() => {
     if (isImageLoad) {
