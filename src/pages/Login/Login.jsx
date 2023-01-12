@@ -13,7 +13,8 @@ import infoBac from '../../assets/Svg/info-bac.svg'
 import bacWhite from '../../assets/Svg/bac-white.svg'
 import btnAbout from '../../assets/Svg/btn-info.svg'
 import './Login.css'
-
+import dotenv from 'dotenv';
+dotenv.config();
 
 
 const Login = () => {
