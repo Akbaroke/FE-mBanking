@@ -54,7 +54,7 @@ const Login = () => {
 
   useEffect(() => {
     getDataIp()
-    console.log(process.env.API);
+    console.log(process.env.REACT_APP_API_URL);
     // Logout()
   }, [])
 
@@ -72,7 +72,7 @@ const Login = () => {
       return false
     }
     try {
-      await axios.post(`${process.env.API}login`, {
+      await axios.post(`${process.env.REACT_APP_API_URL}login`, {
         kode_akses: codeAkses,
         ip_address: ip
       })
