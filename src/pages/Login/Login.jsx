@@ -76,8 +76,10 @@ const Login = () => {
         headers: {
           'content-type': 'text/json'
         },
-        kode_akses: codeAkses,
-        ip_address: ip
+        data: {
+          kode_akses: codeAkses,
+          ip_address: ip
+        }
       })
       setCodeAkses('')
       setPopup('')
