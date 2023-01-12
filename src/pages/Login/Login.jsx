@@ -73,13 +73,8 @@ const Login = () => {
     }
     try {
       await axios.post(`${process.env.REACT_APP_API_URL}login`, {
-        headers: {
-          'content-type': 'text/json'
-        },
-        data: {
-          kode_akses: codeAkses,
-          ip_address: ip
-        }
+        kode_akses: codeAkses,
+        ip_address: ip
       })
       setCodeAkses('')
       setPopup('')
