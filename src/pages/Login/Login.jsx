@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Btn from '../../components/Btn'
 import axios from 'axios';
 import BtnBig from '../../components/BtnBig'
-// import Logout from '../Logout'
+import Logout from '../Logout'
 import { DeviceUUID } from 'device-uuid'
 import bgBottom from '../../assets/Svg/bg-bottom.svg'
 import mBac from '../../assets/Svg/m-bac.svg'
@@ -55,7 +55,7 @@ const Login = () => {
   useEffect(() => {
     getDataIp()
     console.log(process.env.REACT_APP_API_URL);
-    // Logout()
+    Logout()
   }, [])
 
   useEffect(() => {
@@ -108,7 +108,7 @@ const Login = () => {
               value={codeAkses} onChange={e => setCodeAkses(e.target.value)} autoFocus />
             <div className="action">
               <div onClick={() => { setPopup(''); setCodeAkses('') }}><Btn label="Cancel" /></div>
-              <div onClick={() => { setPopup(''); authKodeAkses() }}><Btn label="OK" /></div>
+              <div onClick={() => { setPopup('loading'); authKodeAkses() }}><Btn label="OK" /></div>
             </div>
           </div>
         </div>
