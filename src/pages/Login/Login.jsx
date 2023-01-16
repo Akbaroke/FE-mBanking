@@ -54,7 +54,6 @@ const Login = () => {
 
   useEffect(() => {
     getDataIp()
-    console.log(process.env.REACT_APP_API_URL);
     Logout()
   }, [])
 
